@@ -9,10 +9,10 @@ public class Producer {
     public static final String TOPIC = "mytopic";
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Boolean> kafkaTemplate;
 
     public void sendMessage(String message) {
         System.out.println(String.format("#### -> Producing message -> %s", message));
-        this.kafkaTemplate.send(TOPIC, message);
+        this.kafkaTemplate.send(TOPIC, true);
     }
 }

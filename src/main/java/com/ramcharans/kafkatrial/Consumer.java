@@ -9,7 +9,7 @@ import java.text.MessageFormat;
 @Service
 public class Consumer {
     @KafkaListener(topics = Producer.TOPIC, groupId = "group_id")
-    public void consume(String message) throws IOException {
+    public void consume(Boolean message) throws IOException {
         System.out.println(MessageFormat.format("#### -> Consumed message -> {0}", message));
     }
 }
